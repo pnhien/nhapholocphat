@@ -1,0 +1,24 @@
+@CHARSET "ISO-8859-1";
+
+table.search {
+	margin: 5px 0;
+	border-collapse: collapse;
+}
+table.search th, table.search td {
+	padding: 8px 10px;
+	font-size: 13px;
+	font-weight: bold;
+	vertical-align: middle;
+}
+div.getlink{
+	padding: 8px 10px;
+}
+.inputKeyword {
+	width: 380px;
+}
+.inputUrl {
+	width: 450px;
+}
+.inputPage {
+	width: 50px;
+}

@@ -1,0 +1,558 @@
+{
+	"data": [
+		{
+			"id": "quan_1",
+			"quan": "Quận 1",
+			"sort": 1,
+			"phuong": [
+				{
+					"id": "ben_nghe",
+					"ten": "Bến Nghé",
+					"sort": 1
+				},
+				{
+					"id": "ben_thanh",
+					"ten": "Bến Thành",
+					"sort": 2
+				},				
+				{
+					"id": "pham_ngu_lao",
+					"ten": "Phạm Ngũ Lão",
+					"sort": 3
+				},				
+				{
+					"id": "co_giang",
+					"ten": "Cô Giang",
+					"sort": 4
+				},				
+				{
+					"id": "cau_kho",
+					"ten": "Cầu Kho",
+					"sort": 5
+				},				
+				{
+					"id": "cau_ong_lanh",
+					"ten": "Cầu Ông Lãnh",
+					"sort": 6
+				},				
+				{
+					"id": "da_kao",
+					"ten": "Đa Kao",
+					"sort": 7
+				},				
+				{
+					"id": "nguyen_cu_trinh",
+					"ten": "Nguyễn Cư Trinh",
+					"sort": 8
+				},				
+				{
+					"id": "nguyen_thai_binh",
+					"ten": "Nguyễn Thái Bình",
+					"sort": 9
+				},				
+				{
+					"id": "tan_dinh",
+					"ten": "Tân Định",
+					"sort": 10
+				}
+			]
+		},
+		{
+			"id": "quan_3",
+			"quan": "Quận 3",
+			"sort": 3,
+			"phuong": [
+				{
+					"id": "phuong_1",
+					"ten": "Phường 1",
+					"sort": 1
+				},
+				{
+					"id": "phuong_2",
+					"ten": "Phường 2",
+					"sort": 2
+				},
+				{
+					"id": "phuong_3",
+					"ten": "Phường 3",
+					"sort": 3
+				},
+				{
+					"id": "phuong_4",
+					"ten": "Phường 4",
+					"sort": 4
+				},
+				{
+					"id": "phuong_5_1",
+					"ten": "Phường 5_1",
+					"sort": 5
+				},
+				{
+					"id": "phuong_5_2",
+					"ten": "Phường 5_2",
+					"sort": 5
+				},
+				{
+					"id": "phuong_6",
+					"ten": "Phường 6",
+					"sort": 6
+				},
+				{
+					"id": "phuong_8_1",
+					"ten": "Phường 8_1",
+					"sort": 8
+				},
+				{
+					"id": "phuong_8_2",
+					"ten": "Phường 8_2",
+					"sort": 8
+				},
+				{
+					"id": "phuong_8_3",
+					"ten": "Phường 8_3",
+					"sort": 8
+				},
+				{
+					"id": "phuong_8_4",
+					"ten": "Phường 8_4",
+					"sort": 8
+				},
+				{
+					"id": "phuong_9_1",
+					"ten": "Phường 9_1",
+					"sort": 9
+				},
+				{
+					"id": "phuong_9_2",
+					"ten": "Phường 9_2",
+					"sort": 9
+				},
+				{
+					"id": "phuong_9_4",
+					"ten": "Phường 9_4",
+					"sort": 9
+				},
+				{
+					"id": "phuong_10_ga_hoa_hung",
+					"ten": "Phường 10 Ga Hòa Hưng",
+					"sort": 10
+				},
+				{
+					"id": "phuong_10_vong_xoay",
+					"ten": "Phường 10 Vòng xoay",
+					"sort": 10
+				},
+				{
+					"id": "phuong_11_1",
+					"ten": "Phường 11_1",
+					"sort": 11
+				},
+				{
+					"id": "phuong_11_2",
+					"ten": "Phường 11_2",
+					"sort": 11
+				},
+				{
+					"id": "phuong_11_3",
+					"ten": "Phường 11_3",
+					"sort": 11
+				},
+				{
+					"id": "phuong_11_4",
+					"ten": "Phường 11_4",
+					"sort": 11
+				},
+				{
+					"id": "phuong_12",
+					"ten": "Phường 12",
+					"sort": 12
+				},
+				{
+					"id": "phuong_14_to_1",
+					"ten": "Phường 14 tổ 1",
+					"sort": 14
+				},
+				{
+					"id": "phuong_14_to_2",
+					"ten": "Phường 14 tổ 2",
+					"sort": 14
+				},
+				{
+					"id": "phuong_14_to_3",
+					"ten": "Phường 14 tổ 3",
+					"sort": 14
+				}
+			]
+		},
+		{
+			"id": "quan_5",
+			"quan": "Quận 5",
+			"sort": 5,
+			"phuong": [
+				{
+					"id": "phuong_1",
+					"ten": "Phường 1",
+					"sort": 1
+				},
+				{
+					"id": "phuong_2",
+					"ten": "Phường 2",
+					"sort": 2
+				},
+				{
+					"id": "phuong_3",
+					"ten": "Phường 3",
+					"sort": 3
+				},
+				{
+					"id": "phuong_4",
+					"ten": "Phường 4",
+					"sort": 4
+				},
+				{
+					"id": "phuong_5",
+					"ten": "Phường 5",
+					"sort": 5
+				},
+				{
+					"id": "phuong_6",
+					"ten": "Phường 6",
+					"sort": 6
+				},
+				{
+					"id": "phuong_7",
+					"ten": "Phường 7",
+					"sort": 7
+				},
+				{
+					"id": "phuong_8",
+					"ten": "Phường 8",
+					"sort": 8
+				},
+				{
+					"id": "phuong_9",
+					"ten": "Phường 9",
+					"sort": 9
+				},
+				{
+					"id": "phuong_10",
+					"ten": "Phường 10",
+					"sort": 10
+				},
+				{
+					"id": "phuong_11",
+					"ten": "Phường 11",
+					"sort": 11
+				}
+			]
+		},
+		{
+			"id": "quan_10",
+			"quan": "Quận 10",
+			"sort": 10,
+			"phuong": [
+				{
+					"id": "phuong_1",
+					"ten": "Phường 1",
+					"sort": 1
+				},
+				{
+					"id": "phuong_2",
+					"ten": "Phường 2",
+					"sort": 2
+				},
+				{
+					"id": "phuong_3",
+					"ten": "Phường 3",
+					"sort": 3
+				},
+				{
+					"id": "phuong_4",
+					"ten": "Phường 4",
+					"sort": 4
+				},
+				{
+					"id": "phuong_5",
+					"ten": "Phường 5",
+					"sort": 5
+				},
+				{
+					"id": "phuong_6",
+					"ten": "Phường 6",
+					"sort": 6
+				},
+				{
+					"id": "phuong_7",
+					"ten": "Phường 7",
+					"sort": 7
+				},
+				{
+					"id": "phuong_8",
+					"ten": "Phường 8",
+					"sort": 8
+				},
+				{
+					"id": "phuong_9",
+					"ten": "Phường 9",
+					"sort": 9
+				},
+				{
+					"id": "phuong_10",
+					"ten": "Phường 10",
+					"sort": 10
+				},
+				{
+					"id": "phuong_11",
+					"ten": "Phường 11",
+					"sort": 11
+				},
+				{
+					"id": "phuong_12",
+					"ten": "Phường 12",
+					"sort": 12
+				},
+				{
+					"id": "phuong_13",
+					"ten": "Phường 13",
+					"sort": 13
+				},
+				{
+					"id": "phuong_14",
+					"ten": "Phường 14",
+					"sort": 14
+				},
+				{
+					"id": "phuong_15",
+					"ten": "Phường 15",
+					"sort": 15
+				}
+			]
+		},
+		{
+			"id": "quan_11",
+			"quan": "Quận 11",
+			"sort": 11,
+			"phuong": [
+				{
+					"id": "phuong_1",
+					"ten": "Phường 1",
+					"sort": 1
+				},
+				{
+					"id": "phuong_3",
+					"ten": "Phường 3",
+					"sort": 3
+				},
+				{
+					"id": "phuong_4",
+					"ten": "Phường 4",
+					"sort": 4
+				},
+				{
+					"id": "phuong_5",
+					"ten": "Phường 5",
+					"sort": 5
+				},
+				{
+					"id": "phuong_6",
+					"ten": "Phường 6",
+					"sort": 6
+				},
+				{
+					"id": "phuong_7",
+					"ten": "Phường 7",
+					"sort": 7
+				},
+				{
+					"id": "phuong_8",
+					"ten": "Phường 8",
+					"sort": 8
+				},
+				{
+					"id": "phuong_9",
+					"ten": "Phường 9",
+					"sort": 9
+				},
+				{
+					"id": "phuong_10",
+					"ten": "Phường 10",
+					"sort": 10
+				},
+				{
+					"id": "phuong_12",
+					"ten": "Phường 12",
+					"sort": 12
+				},
+				{
+					"id": "phuong_13",
+					"ten": "Phường 13",
+					"sort": 13
+				},
+				{
+					"id": "phuong_14",
+					"ten": "Phường 14",
+					"sort": 14
+				},
+				{
+					"id": "phuong_15",
+					"ten": "Phường 15",
+					"sort": 15
+				},
+				{
+					"id": "phuong_16",
+					"ten": "Phường 16",
+					"sort": 16
+				}
+			]
+		},
+		{
+			"id": "quan_phu_nhuan",
+			"quan": "Quận Phú Nhuận",
+			"sort": 11,
+			"phuong": [
+				{
+					"id": "phuong_1",
+					"ten": "Phường 1",
+					"sort": 1
+				},
+				{
+					"id": "phuong_2",
+					"ten": "Phường 2",
+					"sort": 2
+				},
+				{
+					"id": "phuong_3",
+					"ten": "Phường 3",
+					"sort": 3
+				},
+				{
+					"id": "phuong_4",
+					"ten": "Phường 4",
+					"sort": 4
+				},
+				{
+					"id": "phuong_5",
+					"ten": "Phường 5",
+					"sort": 5
+				},
+				{
+					"id": "phuong_7",
+					"ten": "Phường 7",
+					"sort": 7
+				},
+				{
+					"id": "phuong_8",
+					"ten": "Phường 8",
+					"sort": 8
+				},
+				{
+					"id": "phuong_10",
+					"ten": "Phường 10",
+					"sort": 10
+				},
+				{
+					"id": "phuong_12",
+					"ten": "Phường 12",
+					"sort": 12
+				},
+				{
+					"id": "phuong_13",
+					"ten": "Phường 13",
+					"sort": 13
+				},
+				{
+					"id": "phuong_14",
+					"ten": "Phường 14",
+					"sort": 14
+				},
+				{
+					"id": "phuong_15",
+					"ten": "Phường 15",
+					"sort": 15
+				},
+				{
+					"id": "phuong_17",
+					"ten": "Phường 17",
+					"sort": 17
+				}
+			]
+		},
+		{
+			"id": "quan_tan_binh",
+			"quan": "Quận Tân Bình",
+			"sort": 12,
+			"phuong": [
+				{
+					"id": "phuong_1",
+					"ten": "Phường 1",
+					"sort": 1
+				},
+				{
+					"id": "phuong_2",
+					"ten": "Phường 2",
+					"sort": 2
+				},
+				{
+					"id": "phuong_3",
+					"ten": "Phường 3",
+					"sort": 3
+				},
+				{
+					"id": "phuong_4",
+					"ten": "Phường 4",
+					"sort": 4
+				},
+				{
+					"id": "phuong_5",
+					"ten": "Phường 5",
+					"sort": 5
+				},
+				{
+					"id": "phuong_6",
+					"ten": "Phường 6",
+					"sort": 6
+				},
+				{
+					"id": "phuong_7",
+					"ten": "Phường 7",
+					"sort": 7
+				},
+				{
+					"id": "phuong_8",
+					"ten": "Phường 8",
+					"sort": 8
+				},
+				{
+					"id": "phuong_9",
+					"ten": "Phường 9",
+					"sort": 9
+				},
+				{
+					"id": "phuong_10",
+					"ten": "Phường 10",
+					"sort": 10
+				},
+				{
+					"id": "phuong_12",
+					"ten": "Phường 12",
+					"sort": 12
+				},
+				{
+					"id": "phuong_13",
+					"ten": "Phường 13",
+					"sort": 13
+				},
+				{
+					"id": "phuong_14",
+					"ten": "Phường 14",
+					"sort": 14
+				},
+				{
+					"id": "phuong_15",
+					"ten": "Phường 15",
+					"sort": 15
+				}
+			]
+		}
+	]
+}

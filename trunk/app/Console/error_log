@@ -1,0 +1,9 @@
+[16-Mar-2016 18:10:02 Asia/Tokyo] PHP Fatal error:  require_once(): Failed opening required 'GetRssNewsController.php' (include_path='/home/billcuong/public_html/lib:.:/usr/lib/php:/usr/local/lib/php') in /home/billcuong/public_html/app/Console/Command/GetRssNewsShell.php on line 4
+[16-Mar-2016 18:15:01 Asia/Tokyo] PHP Fatal error:  require_once(): Failed opening required 'GetRssNewsController.php' (include_path='/home/billcuong/public_html/lib:.:/usr/lib/php:/usr/local/lib/php') in /home/billcuong/public_html/app/Console/Command/GetRssNewsShell.php on line 4
+[18-Mar-2016 05:14:31 Asia/Tokyo] PHP Fatal error:  Call to a member function write() on a non-object in /home/billcuong/public_html/app/Controller/AppController.php on line 117
+[23-Mar-2016 10:29:48 Asia/Bangkok] PHP Fatal error:  Call to a member function write() on a non-object in /home/billcuong/public_html/app/Controller/AppController.php on line 117
+[23-Mar-2016 12:50:15 Asia/Bangkok] PHP Fatal error:  Call to a member function write() on a non-object in /home/billcuong/public_html/app/Controller/AppController.php on line 117
+[26-Mar-2016 09:17:06 Asia/Bangkok] PHP Fatal error:  Call to a member function write() on a non-object in /home/billcuong/public_html/app/Controller/AppController.php on line 117
+[26-Mar-2016 13:47:02 Asia/Bangkok] PHP Fatal error:  Call to a member function write() on a non-object in /home/billcuong/public_html/app/Controller/AppController.php on line 117
+[11-Apr-2016 17:00:01 Asia/Tokyo] PHP Fatal error:  Call to a member function write() on a non-object in /home/billcuong/public_html/app/Controller/AppController.php on line 117
+[27-Apr-2016 17:30:05 Asia/Tokyo] PHP Fatal error:  Call to a member function write() on a non-object in /home/billcuong/public_html/app/Controller/AppController.php on line 117

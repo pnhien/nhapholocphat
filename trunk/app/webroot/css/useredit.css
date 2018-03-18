@@ -1,0 +1,123 @@
+@CHARSET "UTF-8";
+table.table-list_user_edit {
+	margin: 30px 0;
+}
+table.table-list_user_edit tbody {
+	background: #ffffff;
+}
+table.table-list_user_edit tbody td{
+	padding: 8px 3px;
+	font-size: 13px;
+	text-align: left;
+	vertical-align: middle;
+	white-space: nowrap;
+}
+.table-list_user_edit thead th {
+	text-align: center!important;
+}
+/* ------------------------------- */
+table.table-list_user_edit thead th, table.table-list_user thead th{
+	font-weight: bold;
+	color: #444444;
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #aaaaaa), color-stop(1, #dfdfdf));
+	background: -moz-linear-gradient(top, #aaaaaa 5%, #dfdfdf 100%);
+	background: -webkit-linear-gradient(top, #aaaaaa 5%, #dfdfdf 100%);
+	background: -o-linear-gradient(top, #aaaaaa 5%, #dfdfdf 100%);
+	background: -ms-linear-gradient(top, #aaaaaa 5%, #dfdfdf 100%);
+	background: linear-gradient(to bottom, #aaaaaa 5%, #dfdfdf 100%);
+ filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#aaaaaa', endColorstr='#dfdfdf', GradientType=0);
+	background-color: #aaaaaa;
+	border-bottom: 1px solid #cccccc;
+}
+table.table-list_user_edit tbody td {
+	color: #666666;
+	border-bottom: 1px solid #cccccc;
+}
+table.table-list_user_edit tbody tr.trc {
+	background: #f6f6f6;
+}
+/* ------------------------------- */
+table.table-list_user_edit thead .name {
+	width: 150px;
+}
+/* ------------------------------- */
+table.table-list_user_edit .te {
+	text-align: right !important;
+}
+table.table-list_user_edit .tc img {
+	margin-right: 4px;
+	vertical-align: middle;
+}
+table.table-list_user_edit .tc a {
+	font-weight: normal;
+	text-decoration: none;
+	color: #666666;
+}
+table.table-list_user_edit .tc a:hover {
+	text-decoration: none;
+	color: #aaaaaa;
+}
+table.table-list_user_edit tbody td a {
+	text-decoration: underline;
+	color: #0000ff;
+	vertical-align: middle;
+}
+table.table-list_user_edit tbody td a:hover {
+	color: #990033;
+}
+
+div.capture-area {
+	width: 100%;
+	padding-top: 6px;
+	padding-bottom: 6px;
+	padding-left: 6px;
+}
+/* ------------------------------- */
+/* ページナビゲーション            */
+/* ------------------------------- */
+table.table-list_edit {
+	width: 90%;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+table.table-list {
+	width: 80%;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}
+.table-list th, .table-list_edit th, .table-list td, .table-list_edit td {
+	font-weight: normal;
+}
+.table-list th{
+	text-align: left;
+	background: #F4E5E5;
+	padding-bottom: 5px;
+}
+.table-list_edit th {
+	text-align: left;
+	background: #F4E5E5;
+	padding-bottom: 5px;
+	padding-top: 5px;
+}
+table.table-list_edit thead tr.navbar td, table.table-list thead tr.navbar td {
+	padding-bottom: 6px;
+	vertical-align: top;
+	padding-left: 6px;
+}
+table.table-list_edit tfoot tr.navbar td, table.table-list tfoot tr.navbar td {
+	padding-top: 6px;
+	vertical-align: top;
+}
+.table-list caption, .table-list_edit caption{
+	padding-top: 10px;
+	padding-bottom: 5px;
+	text-align: left;
+	font-size: 20;
+}
+.w150 {
+	width: 150px;
+}
+.w200 {
+	width: 200px;
+}
+/* ------------------------------- */
