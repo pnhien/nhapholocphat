@@ -29,7 +29,7 @@
 	href="https://s.ytimg.com/yts/cssbin/www-guide-webp-vflpNbi_i.css"
 	class="css-httpssytimgcomytscssbinwwwguidewebpvflpNbi_icss">
 <?php
-	// CSS
+	// CSS admin
 	echo $this->Html->css ( array (
 			'default','responsive','menu.RealEstate-admin'
 	), 'stylesheet', array (
@@ -330,7 +330,7 @@
 														</span>
 													</span>
 												</a></li>
-												<?php 
+												<?php
 												}
 												if($login_user_role <= RwsConstant::USER_AUTH_ROLE_M3){
 												?>
@@ -347,7 +347,7 @@
 												</a></li>
 												<?php 
 												}
-												if($login_user_role <= RwsConstant::USER_AUTH_ROLE_M2){
+												if($login_user_role <= RwsConstant::USER_AUTH_ROLE_M3){
 												?>
 												<li
 													class="guide-channel guide-notification-item overflowable-list-item "

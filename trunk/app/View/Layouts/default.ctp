@@ -51,26 +51,56 @@
 	href="https://s.ytimg.com/yts/cssbin/www-guide-webp-vflpNbi_i.css"
 	class="css-httpssytimgcomytscssbinwwwguidewebpvflpNbi_icss">
 <?php
-	// CSS
-	echo $this->Html->css ( array (
-			'default','responsive','menu.RealEstate-admin'
-	), 'stylesheet', array (
-			'media' => 'screen' 
-	),
-		array('async' => 'async')
-	);
-	// JQuery
-	echo $this->Html->script ( array (
-			'jquery/jquery-1.10.2.min'
-	) );
-	
-	echo $this->Html->script ( array (
-			'default',
-			'youtube_by_id',
-			'atrk'
-	),
-		array('async' => 'async')
-	);
+	if(substr($_SERVER['REQUEST_URI'],1,8) == "quyHoach"){
+		// CSS
+		echo $this->Html->css ( array (
+				'default',
+				'responsive',
+				'menu.RealEstate-admin',
+				'maps/leaflet',
+				'maps/bootstrap.min.css',
+				'maps/bootstrap-combobox.min.css',
+				'maps/Style'
+		), 'stylesheet', array (
+				'media' => 'screen' 
+		),
+			array('async' => 'async')
+		);
+		// JQuery
+		echo $this->Html->script ( array (
+				'jquery/jquery-1.11.3.min'
+		) );
+		
+		echo $this->Html->script ( array (
+				'default',
+				'youtube_by_id',
+				'atrk',
+				'maps/leaflet',
+				'maps/ITME'
+		),
+			array('async' => 'async')
+		);	
+	} else {
+		// CSS admin
+		echo $this->Html->css ( array (
+				'default','responsive','menu.RealEstate-admin'
+		), 'stylesheet', array (
+				'media' => 'screen' 
+		),
+			array('async' => 'async')
+		);
+		// JQuery
+		echo $this->Html->script ( array (
+				'jquery/jquery-1.10.2.min'
+		) );
+		
+		echo $this->Html->script ( array (
+				'default',
+				'atrk'
+		),
+			array('async' => 'async')
+		);
+	}
 ?>
 
 <script>
@@ -372,7 +402,7 @@
 												</a></li>
 												<?php 
 												}
-												if($login_user_role <= RwsConstant::USER_AUTH_ROLE_M2){
+												if($login_user_role <= RwsConstant::USER_AUTH_ROLE_M3){
 												?>
 												<li
 													class="guide-channel guide-notification-item overflowable-list-item "
