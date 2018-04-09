@@ -2,38 +2,33 @@
 <div class="title-group">
 <h1 id="mapName">Bản đồ quy hoạch Tp. Hồ Chí Minh</h1>
 </div>
-<form class="form-horizontal" style="display: block;" on>
-<ul class="row fillter">
-	<li class="col-lg-2 col-md-2 col-sm-3"><select class="combobox"
-		id="DistrictId" style="display: block;">
-		<value>
-		-- Chọn Quận / Huyện --
-		</value>
-	</select> <input id="ipDistrictId" name="DistrictId" type="hidden" /></li>
-	<li class="col-lg-2 col-md-2 col-sm-3"><select class="combobox"
-		id="WardId" style="display: block;">
-		<value>
-		-- Chọn Phường / Xã --
-		</value>
-	</select> <input id="ipWardId" name="WardId" type="hidden" /></li>
-	<li class="col-lg-2 col-md-2 col-sm-3"><input type="submit"
-		value="Xem bản đồ quy hoạch"></li>
-</ul>
-</form>
+<div id="id_content_view" class='content_view'>
+	<form class="form-horizontal" style="display: block;" on>
+		<ul class="row fillter">
+			<li class="col-lg-2 col-md-2 col-sm-3"><select class="combobox"
+				id="DistrictId" style="display: block;">
+				<value>
+				-- Chọn Quận / Huyện --
+				</value>
+			</select> <input id="ipDistrictId" name="DistrictId" type="hidden" /></li>
+			<li class="col-lg-2 col-md-2 col-sm-3"><select class="combobox"
+				id="WardId" style="display: block;">
+				<value>
+				-- Chọn Phường / Xã --
+				</value>
+			</select> <input id="ipWardId" name="WardId" type="hidden" /></li>
+			<li class="col-lg-2 col-md-2 col-sm-3"><input type="submit"
+				value="Xem bản đồ quy hoạch"></li>
+		</ul>
+	</form>
+	</div>
+	<div id="photo" tabindex="0" style="position: relative;width: 900px;height: 700px;"></div>
 </div>
-<div id="photo"></div>
-
-<script src="/maps/Scripts/leaflet.js"></script>
-<script
-	type="text/javascript" src="/maps/Scripts/ITME.js"></script>
-<script
-	src="/maps/Scripts/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">	
 		var url_string = window.location.href;
 		var ua = window.navigator.userAgent;
 		var msie = ua.indexOf("MSIE ");
 		var url = url_string.replace('/quyHoach','');
-		alert(url);
 		var district = "";
 		var ward = "";
 		var isloading = false;
@@ -55,12 +50,10 @@
 		var cbbDistrict = document.getElementById('DistrictId'),
 		cbbWard = document.getElementById('WardId');
 		
-		
-        var map = L.map('photo').setView(new L.LatLng(0,0), 0);
+      var map = L.map('photo').setView(new L.LatLng(0,0), 0);
 		
 		// load combobox data
-		
-		$.getJSON(url + "/maps/Data/data.json", function( json ) {
+		$.getJSON("<?php echo RwsConstant::FULL_BASE_URL_HOST;?>" + "/maps/Data/data.json", function( json ) {
 			console.log( "JSON Data: " + json);
 			empty(cbbDistrict);
 			addOption("","-- Chọn Quận / Huyện --", cbbDistrict);		
@@ -79,7 +72,7 @@
 		function parse(document){
 			iwidth = document.firstChild.attributes["WIDTH"].value;
 			iheight = document.firstChild.attributes["HEIGHT"].value;
-			L.tileLayer.zoomify(url + '/maps/Maps/'+district+'/'+ward+'/', { 
+			L.tileLayer.zoomify('<?php echo RwsConstant::FULL_BASE_URL_HOST;?>' + '/maps/Maps/'+district+'/'+ward+'/', { 
 				width: iwidth, 
 				height: iheight,
 				tolerance: 1,
@@ -90,18 +83,17 @@
 		// load map
 		if(district != null && ward != null){
 			$.ajax({
-				url: url + '/maps/Maps/' +district+ '/' + ward + '/ImageProperties.xml', // name of file you want to parse
+				url: '<?php echo RwsConstant::FULL_BASE_URL_HOST;?>' + '/maps/Maps/' +district+ '/' + ward + '/ImageProperties.xml', // name of file you want to parse
 				dataType: "xml",
 				success: parse,
-				error: function(){alert("Error: Something went wrong");}
-			});	
-			alert(url + '/maps/Maps/'+district+'/'+ward+'/');											
+				error: function(){alert("Error: don't load file - Something went wrong");}
+			});											
 		}   
 		
 		cbbDistrict.onchange = function (e) {
 			var val = e.target.value;
 			document.getElementById('ipDistrictId').value = val;
-			$.getJSON(url + "/maps/Data/data_sort.json", function( json ) {
+			$.getJSON("<?php echo RwsConstant::FULL_BASE_URL_HOST;?>" + "/maps/Data/data_sort.json", function( json ) {
 				console.log( "JSON Data: " + json);
 				empty(cbbWard);
 				addOption("", "-- Chọn Phường / Xã --", cbbWard);
