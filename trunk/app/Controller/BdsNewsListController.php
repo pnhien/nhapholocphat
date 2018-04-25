@@ -36,25 +36,6 @@ class BdsNewsListController extends AppController {
 	 * Displays a view Results
 	 */
 	public function index() {	
-
-		$querydata = array();   		
-   		$querydata['id_bdsnews_loai_tin'] = 'ad-selling';
-   		$querydata['id_bdsnews_nhom_bds'] = '';
-   		$querydata['id_bdsnews_loai_bds'] = '';
-   		$querydata['id_tinh_trang_code'] = 'st-new';
-   		$querydata['id_bdsnews_danh_dau'] = 'deal-good';
-   		$querydata['id_bdsnews_province_code'] = '249';
-   		$querydata['id_bdsnews_district_code'] = '313';
-   		$querydata['id_bdsnews_ward_code'] = '1003';
-   		$querydata['id_bdsnews_street_code'] = '4648';
-   		$querydata['id_bdsnews_loai_tien_code'] = 'pm-vnd-b';
-   		$querydata['id_bdsnews_address_number'] = '';
-   		$querydata['id_bdsnews_min_price'] = '';
-   		$querydata['id_bdsnews_max_price'] = '';
-   		$querydata['id_bdsnews_ngo_ngach'] = '';
-   		$querydata['id_bdsnews_order_by'] = 'LastUpdatedDate';  
-   		$querydata['id_bdsnews_loai_tien_code'] = 'pm-vnd-m'; 		
-
 		$customer = $this->TCustomer->find('all', array(
 						'conditions' => array(
 								'TCustomer.DELETE_YMD IS NULL'
@@ -68,7 +49,6 @@ class BdsNewsListController extends AppController {
 						))
 		);
 		$this->set('danhDaulist', $danhDau);
-		//var_dump($danhDau);
 
 		$tinhTrang = $this->TinhTrang->find('all', array(
 						'conditions' => array(
@@ -199,93 +179,108 @@ class BdsNewsListController extends AppController {
 		
    	$searchParam = $this->request->data;
    	$condition = array();   		
-   	$order_by = '';
+	$order_by = '';		
+
    	if(isset($searchParam)){	   		
    		if(isset($searchParam["id_bdsnews_loai_tin"]) && $searchParam["id_bdsnews_loai_tin"] != ''){   				
-   			array_push($condition, "BdsNews.TYPE_NEWS_CODE= '". $searchParam["id_bdsnews_loai_tin"] . "'");
-   			$querydata['id_bdsnews_loai_tin'] = $searchParam["id_bdsnews_loai_tin"];
+   			array_push($condition, "BdsNews.TYPE_NEWS_CODE= '". $searchParam["id_bdsnews_loai_tin"] . "'");   			
+		} else{
+			$searchParam["id_bdsnews_loai_tin"] = '';
 		}
 		if(isset($searchParam["id_bdsnews_nhom_bds"]) && $searchParam["id_bdsnews_nhom_bds"] != ''){
    			array_push($condition, "BdsNews.GROUP_CODE= '". $searchParam["id_bdsnews_nhom_bds"] . "'");
-   			$querydata['id_bdsnews_nhom_bds'] = $searchParam["id_bdsnews_nhom_bds"];
+		}else{
+			$searchParam["id_bdsnews_nhom_bds"] = '';
 		}
 		if(isset($searchParam["id_bdsnews_loai_bds"]) && $searchParam["id_bdsnews_loai_bds"] != ''){
    			array_push($condition, "BdsNews.LOAI_BDS_CODE= '". $searchParam["id_bdsnews_loai_bds"] . "'");
-   			$querydata['id_bdsnews_loai_bds'] = $searchParam["id_bdsnews_loai_bds"];
+		}else{
+			$searchParam["id_bdsnews_loai_bds"] = '';
 		}
    		if(isset($searchParam["id_tinh_trang_code"]) && $searchParam["id_tinh_trang_code"] != ''){
    			array_push($condition, "BdsNews.TINH_TRANG_CODE= '". $searchParam["id_tinh_trang_code"] . "'");
-   			$querydata['id_tinh_trang_code'] = $searchParam["id_tinh_trang_code"];
+		} else{
+			$searchParam["id_tinh_trang_code"] = '';
 		}
 		if(isset($searchParam["id_bdsnews_danh_dau"]) && $searchParam["id_bdsnews_danh_dau"] != ''){
    			array_push($condition, "BdsNews.DANH_DAU_CODE= '". $searchParam["id_bdsnews_danh_dau"] . "'");
-   			$querydata['id_bdsnews_danh_dau'] = $searchParam["id_bdsnews_danh_dau"];
+		} else{
+			$searchParam["id_bdsnews_danh_dau"] = '';
 		}
 		if(isset($searchParam["id_bdsnews_province_code"]) && $searchParam["id_bdsnews_province_code"] != ''){
    			array_push($condition, "BdsNews.PROVINCE_CODE= '". $searchParam["id_bdsnews_province_code"] . "'");
-   			$querydata['id_bdsnews_province_code'] = $searchParam["id_bdsnews_province_code"];
+		} else{
+			$searchParam["id_bdsnews_province_code"] = '';
 		}
 		if(isset($searchParam["id_bdsnews_district_code"]) && $searchParam["id_bdsnews_district_code"] != ''){
    			array_push($condition, "BdsNews.DISTRICT_CODE= '". $searchParam["id_bdsnews_district_code"] . "'");
-   			$querydata['id_bdsnews_district_code'] = $searchParam["id_bdsnews_district_code"];
+		} else{
+			$searchParam["id_bdsnews_district_code"] = '';
 		}
 		if(isset($searchParam["id_bdsnews_street_code"]) && $searchParam["id_bdsnews_street_code"] != ''){
    			array_push($condition, "BdsNews.STREET_CODE= '". $searchParam["id_bdsnews_street_code"] . "'");
-   			$querydata['id_bdsnews_street_code'] = $searchParam["id_bdsnews_street_code"];
+		} else{
+			$searchParam["id_bdsnews_street_code"] = '';
 		}
 		if(isset($searchParam["id_bdsnews_ward_code"]) && $searchParam["id_bdsnews_ward_code"] != ''){
    			array_push($condition, "BdsNews.WARD_CODE= '". $searchParam["id_bdsnews_ward_code"] . "'");
-   			$querydata['id_bdsnews_ward_code'] = $searchParam["id_bdsnews_ward_code"];
+		} else{
+			$searchParam["id_bdsnews_ward_code"] = '';
 		}
 		if(isset($searchParam["id_bdsnews_address_number"]) && $searchParam["id_bdsnews_address_number"] != ''){
    			array_push($condition, "BdsNews.SO_NHA= '". $searchParam["id_bdsnews_address_number"] . "'");
-   			$querydata['id_bdsnews_address_number'] = $searchParam["id_bdsnews_address_number"];
+		} else{
+			$searchParam["id_bdsnews_address_number"] = '';
 		}
 		if(isset($searchParam["id_bdsnews_ngo_ngach"]) && $searchParam["id_bdsnews_ngo_ngach"] != ''){
    			array_push($condition, "BDSNews.SO_LUONG_HEM= '". $searchParam["id_bdsnews_ngo_ngach"] . "'");
-   			$querydata['id_bdsnews_ngo_ngach'] = $searchParam["id_bdsnews_ngo_ngach"];
-		}			
+		}else{
+			$searchParam["id_bdsnews_ngo_ngach"] = '';
+		}
+
 		if(isset($searchParam["id_bdsnews_min_price"]) && $searchParam["id_bdsnews_min_price"] != ''){
    			array_push($condition, "BdsNews.GIA_RAO >= '". $searchParam["id_bdsnews_min_price"] . "'");
-   			$querydata['id_bdsnews_min_price'] = $searchParam["id_bdsnews_min_price"];
    			if(isset($searchParam["id_bdsnews_loai_tien_code"]) && $searchParam["id_bdsnews_loai_tien_code"] != ''){
 	   			array_push($condition, "BdsNews.LOAI_TIEN_CODE = '". $searchParam["id_bdsnews_loai_tien_code"] . "'");
-	   			$querydata['id_bdsnews_loai_tien_code'] = $searchParam["id_bdsnews_loai_tien_code"];
+			} else{
+				$searchParam["id_bdsnews_loai_tien_code"] = '';
 			}
+		}else{
+			$searchParam["id_bdsnews_min_price"] = '';
+			$searchParam["id_bdsnews_loai_tien_code"] = '';
 		}
 		if(isset($searchParam["id_bdsnews_max_price"]) && $searchParam["id_bdsnews_max_price"] != ''){
    			array_push($condition, "BdsNews.GIA_RAO <= '". $searchParam["id_bdsnews_max_price"] . "'");
-   			$querydata['id_bdsnews_max_price'] = $searchParam["id_bdsnews_max_price"];
    			if(isset($searchParam["id_bdsnews_loai_tien_code"]) && $searchParam["id_bdsnews_loai_tien_code"] != ''){
 	   			array_push($condition, "BdsNews.LOAI_TIEN_CODE = '". $searchParam["id_bdsnews_loai_tien_code"] . "'");
-	   			$querydata['id_bdsnews_loai_tien_code'] = $searchParam["id_bdsnews_loai_tien_code"];
 			}
-		}		
+			else{
+				$searchParam["id_bdsnews_loai_tien_code"] = '';				
+			}
+		}else{
+			$searchParam["id_bdsnews_max_price"] = '';
+			$searchParam["id_bdsnews_loai_tien_code"] = '';
+		}
 
 		if(isset($searchParam["id_bdsnews_order_by"]) && $searchParam["id_bdsnews_order_by"] != ''){
 			if($searchParam["id_bdsnews_order_by"] == 'AddressNumber'){
    				$order_by = 'SO_NHA';
-   				$querydata['id_bdsnews_order_by'] = $searchParam["id_bdsnews_order_by"];
    			}
    			else if ($searchParam["id_bdsnews_order_by"]== 'PriceProposedInVND'){
    				$order_by = 'GIA_RAO';
-   				$querydata['id_bdsnews_order_by'] = $searchParam["id_bdsnews_order_by"];
-   			} else{
+			}
+			else if ($searchParam["id_bdsnews_order_by"]== 'id'){
+				$order_by = 'BDSNEWS_ID';
+			}
+			else{
    				$order_by = 'UPDATE_YMD';
-   				$querydata['id_bdsnews_order_by'] = $searchParam["id_bdsnews_order_by"];
    			}
-		}			
+		} else{
+			$searchParam["id_bdsnews_order_by"] = '';
+		}
 
    	}
-   	$this->set('querydata',$querydata);
-   		//var_dump($condition);
-   		//die;
-		/*if($test1) && $searchParam['StatusCssClass'] != ''){
-			$condition += $searchParam['StatusCssClass'] . ",";
-		}
-		if($$searchParam('AdsTypeCssClass') != ''){
-			$condition = $condition . $searchParam('AdsTypeCssClass');
-		}*/	
+	   $this->set('querydata',$searchParam);
 		$data = $this->BdsNews->find("all", array(			
 			'fields' => 'BdsNews.*, Huong.HUONG_NAME, Ward.WARD_NAME, District.DISTRICT_NAME, Street.STREET_NAME',
 			'conditions' => $condition,
@@ -334,7 +329,6 @@ class BdsNewsListController extends AppController {
 			'order' => $order_by
 			));
 		$this->set( 'data', $data);
-        //var_dump($data);//die;
         $bdsNews = $this->BdsNews->find('first', array(
 					'fields' => 'BdsNews.*, DiemTot.*, DiemXau.*',
 					'conditions' => array(
@@ -361,33 +355,39 @@ class BdsNewsListController extends AppController {
 				)
 			);
 			if($bdsNews != null){
-				$this->set('BdsNews', $bdsNews);
-				
-				$provinceCode = $bdsNews['BdsNews']['PROVINCE_CODE']; 
-				$districtList = $this->District->find('all', array(
-						'conditions' => array(
+				$this->set('BdsNews', $bdsNews);				
+				$provinceCode = $searchParam['id_bdsnews_province_code']; 				
+				$districtList = [];
+				if($provinceCode != '')
+				{
+					$districtList = $this->District->find('all', array(
+							'conditions' => array(
 								'District.DISTRICT_STATUS = 1',
 								'District.PROVINCE_CODE =' . $provinceCode
-						))
-				);
+							))
+					);					
+				}
 				$this->set('districtList', $districtList);
 				
-				$districtCode = $bdsNews['BdsNews']['DISTRICT_CODE'];
-				$wardList = $this->Ward->find('all', array(
+				$districtCode = $searchParam['id_bdsnews_district_code'];
+				$wardList = [];
+				$streetList = [];
+				if($districtCode != '')
+				{
+					$wardList = $this->Ward->find('all', array(
 						'conditions' => array(
 								'Ward.WARD_STATUS = 1',
-								'Ward.DISTRICT_CODE =' . $districtCode
+								'Ward.DISTRICT_CODE=' . $districtCode
 						))
-				);
-				$this->set('wardList', $wardList);
-				
-				$wardCode = $bdsNews['BdsNews']['WARD_CODE'];
-				$streetList = $this->Street->find('all', array(
+					);					
+					$streetList = $this->Street->find('all', array(
 						'conditions' => array(
 								'Street.STREET_STATUS = 1',
 								'Street.DISTRICT_CODE =' . $districtCode 
-						))
-				);
+						))	
+					);					
+				}
+				$this->set('wardList', $wardList);
 				$this->set('streetList', $streetList);
 			}
 		return $this->render ( '/bdsNewsList' );
@@ -395,9 +395,9 @@ class BdsNewsListController extends AppController {
 
 	public function getDistrictByProvince($provinceID){
 		$provinceList = $this->Provinces->find('all', array(
-						'conditions' => array(
-								"Province.PROVINCE_STATUS = 1"
-						))
+			'conditions' => array(
+					"Province.PROVINCE_STATUS = 1"
+			))
 		);
 	}
 
