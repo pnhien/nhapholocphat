@@ -2,7 +2,7 @@
 App::uses ( 'AppController', 'Controller' );
 
 /**
- * WatchController
+ * BdsNewsListController
  */
 class BdsNewsListController extends AppController {
 	public $uses = array (

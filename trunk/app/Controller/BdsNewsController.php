@@ -115,7 +115,7 @@ class BdsNewsController extends AppController {
 				 if($type == 'date' || $type == 'string' ){
 					$bdsNewsFromDB['BdsNews'][$bdsFieldkey] = ($bdsFieldValue == null? null: $bdsFieldValue); 		
 				 } else {
-				 	$bdsNewsFromDB['BdsNews'][$bdsFieldkey] = ($bdsFieldValue == null? null: $bdsFieldValue);
+				 	$bdsNewsFromDB['BdsNews'][$bdsFieldkey] = ($bdsFieldValue == null? '': $bdsFieldValue);
 				 }
 			}
 			$bdsNews = $this->setCommonData($bdsNews, false);
@@ -163,7 +163,8 @@ class BdsNewsController extends AppController {
 
 		$loaiTin = $this->LoaiTin->find('all', array(
 						'conditions' => array(
-								'LoaiTin.DELETE_YMD IS NULL'
+								'LoaiTin.DELETE_YMD IS NULL',
+								'LoaiTin.LA_KHACH_HANG <> 1'
 						))
 		);
 		$this->set('loaiTinlist', $loaiTin);
@@ -593,12 +594,12 @@ class BdsNewsController extends AppController {
 				if($uploadThisFile){
 					$filename=basename($file_name,$ext);
 					$newFileName=$BdsNewsId . "_" . $filename . $ext;				
-					move_uploaded_file($_FILES["files"]["tmp_name"]["HinhAnh"][$key], RwsConstant::FULL_BASE_URL_HOST . "/Upload/".$newFileName);
+					move_uploaded_file($_FILES["files"]["tmp_name"]["HinhAnh"][$key], "Upload/".$newFileName);
 					
 					//InsertDB
 					$HinhAnh = $this->HinhAnh->create();
 					$HinhAnh['BDS_NEWS_ID'] = $BdsNewsId;
-					$HinhAnh['HINH_ANH_PATH'] = RwsConstant::FULL_BASE_URL_HOST . "/Upload/".$newFileName;
+					$HinhAnh['HINH_ANH_PATH'] = "Upload/".$newFileName;
 					
 					$this->HinhAnh->save($HinhAnh);
 				}
@@ -611,5 +612,66 @@ class BdsNewsController extends AppController {
 					echo $error."<br/>";
 				}
 			}
+	}
+	
+	function deleteHinhAnh($BdsNewsId, $HinhAnhId){
+		$errors = array();
+		$extension = array("jpeg","jpg","png","gif");
+			
+		$bytes = 1024;
+		$allowedKB = 10000;
+		$totalBytes = $allowedKB * $bytes;
+		if(isset($_FILES["files"])==false)
+		{
+			echo "<b>Please, Select the files to upload!!!</b>";
+			return;
+		}
+		$this->HinhAnh->begin();
+		foreach($_FILES["files"]["tmp_name"]["HinhAnh"] as $key=>$tmp_name)
+		{
+			$uploadThisFile = true;
+	
+			$file_name = $_FILES["files"]["name"]["HinhAnh"][$key];
+			$file_tmp = $tmp_name;
+			$ext = pathinfo($file_name,PATHINFO_EXTENSION);
+	
+			if(!in_array(strtolower($ext),$extension))
+			{
+				array_push($errors, "File type is invalid. Name:- ".$file_name);
+				$uploadThisFile = false;
+			}
+	
+			if($_FILES["files"]["size"]["HinhAnh"][$key] > $totalBytes){
+				array_push($errors, "File size must be less than 10M. Name:- ".$file_name);
+				$uploadThisFile = false;
+			}
+	
+			if(file_exists("Upload/".$_FILES["files"]["name"]["HinhAnh"][$key]))
+			{
+				array_push($errors, "File is already exist. Name:- ". $file_name);
+				$uploadThisFile = false;
+			}
+	
+			if($uploadThisFile){
+				$filename=basename($file_name,$ext);
+				$newFileName=$BdsNewsId . "_" . $filename . $ext;
+				move_uploaded_file($_FILES["files"]["tmp_name"]["HinhAnh"][$key], RwsConstant::FULL_BASE_URL_HOST . "/Upload/".$newFileName);
+					
+				//InsertDB
+				$HinhAnh = $this->HinhAnh->create();
+				$HinhAnh['BDS_NEWS_ID'] = $BdsNewsId;
+				$HinhAnh['HINH_ANH_PATH'] = RwsConstant::FULL_BASE_URL_HOST . "/app/webroot/Upload/".$newFileName;
+					
+				$this->HinhAnh->save($HinhAnh);
+			}
+		}
+		$this->HinhAnh->commit();
+		$count = count($errors);
+			
+		if($count != 0){
+			foreach($errors as $error){
+				echo $error."<br/>";
+			}
+		}
 	}
 }

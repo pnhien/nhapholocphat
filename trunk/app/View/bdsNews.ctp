@@ -12,6 +12,7 @@ function fnc_doGetDistricts() {
 	$('#id_div_error').empty().hide();
 
 	var province_code = $('#id_bdsnews_province_code').val();
+	alert(province_code );
 	var dataInput = [province_code];
 	$.ajax({
 		url : <?php echo "'/bdsNews/doGetDistricts'"?> ,
@@ -131,7 +132,6 @@ function fnc_madeAddress(){
 </script>
 
 <?php echo $this->Form->create('BdsNews', array('url' => array ('controller' => 'BdsNews', 'action' => 'doSaveBdsNews'), 'role' => 'form', 'novalidate' => true, 'enctype'=>'multipart/form-data')); ?>
-
             <?php 
                 echo $this->Form->input ( '', array (
 								'name' => 'data[BdsNews][BDSNEWS_ID]',
@@ -142,9 +142,7 @@ function fnc_madeAddress(){
 								'value' => $bdsNews['BdsNews']['BDSNEWS_ID']
 					) );
             ?>
-
             <!-- StaffInfo -->
-            
 <!-- Thông tin nội bộ -->
 <article class="content-item">
     <header>
@@ -171,11 +169,11 @@ function fnc_madeAddress(){
                 		foreach ($customerlist as $customer){
                 				$option[$customer['TCustomer']['USER_ID']] = $customer['TCustomer']['CUSTOMER_NAME'];
                 		}
+                		$isDisable = '';
                 		$login_user_role = 0 + $this->Session->read('login.user.AUTH_ROLE');
 							if ($this->Session->check(RwsConstant::SESSION_LOGIN_USER_KEY)) {
 								if($login_user_role <= RwsConstant::USER_AUTH_ROLE_SUB){
 									$admin = true;
-									$isDisable = '';	
 								} else {
 									$isDisable = 'disabled';
 								} 

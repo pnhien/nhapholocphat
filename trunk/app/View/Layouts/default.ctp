@@ -57,6 +57,7 @@
 				'default',
 				'responsive',
 				'menu.RealEstate-admin',
+				'site',
 				'maps/leaflet',
 				'maps/bootstrap.min.css',
 				'maps/bootstrap-combobox.min.css',
@@ -83,7 +84,7 @@
 	} else {
 		// CSS admin
 		echo $this->Html->css ( array (
-				'default','responsive','menu.RealEstate-admin'
+				'default','responsive','menu.RealEstate-admin','site'
 		), 'stylesheet', array (
 				'media' => 'screen' 
 		),

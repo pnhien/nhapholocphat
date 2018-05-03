@@ -577,17 +577,17 @@ function fnc_makeAddress(){
                 <label class="control-label"><span class="text-error">*</span> Tỉnh / Thành Phố:</label>
                 <div class="controls">
                     <?php 
-	                		$option = array();
-	                		foreach ($provinceList as $province){
-	                				$option[$province['Province']['PROVINCE_CODE']] = $province['Province']['PROVINCE_NAME'];
-	                		}
-	                		echo $this->Form->select ( '', $option, array(
-	                			'id' => 'id_bdsnews_province_code', 
-	                			'name' => 'data[BdsNews][PROVINCE_CODE]',
-	                			'class' => 'select-box',
-	                			'onChange' => 'fnc_doGetDistricts();'
-	                		));
-                		?>
+                		$option = array();
+                		foreach ($provinceList as $province){
+                				$option[$province['Province']['PROVINCE_CODE']] = $province['Province']['PROVINCE_NAME'];
+                		}
+                		echo $this->Form->select ( '', $option, array(
+                			'id' => 'id_bdsnews_province_code', 
+                			'name' => 'data[BdsNews][PROVINCE_CODE]',
+                			'class' => 'select-box',
+                			'onChange' => 'fnc_doGetDistricts();'
+                		));
+            		?>
                 </div>
             </div>
 
@@ -646,19 +646,19 @@ function fnc_makeAddress(){
                 </label>
                 <div class="controls">
                     <?php 
-	                		$option = array();
-	                		if(isset($streetList)){
-		                		foreach ($streetList as $street){
-		                				$option[$street['Street']['STREET_CODE']] = $street['Street']['STREET_NAME'];
-		                		}
+                		$option = array();
+                		if(isset($streetList)){
+	                		foreach ($streetList as $street){
+	                				$option[$street['Street']['STREET_CODE']] = $street['Street']['STREET_NAME'];
 	                		}
-	                		echo $this->Form->select ( '', $option, array(
-	                			'id' => 'id_bdsnews_street_code', 
-	                			'name' => 'data[BdsNews][STREET_CODE]',
-	                			'class' => 'select-box',
-	                			'onChange' => 'fnc_makeAddress();'
-	                		));
-                		?>
+                		}
+                		echo $this->Form->select ( '', $option, array(
+                			'id' => 'id_bdsnews_street_code', 
+                			'name' => 'data[BdsNews][STREET_CODE]',
+                			'class' => 'select-box',
+                			'onChange' => 'fnc_makeAddress();'
+                		));
+            		?>
                 </div>
             </div>
 
